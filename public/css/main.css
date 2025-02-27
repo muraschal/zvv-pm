@@ -4,77 +4,97 @@
  * Enthält die grundlegenden Stile für die ZVV Projektmanagement-Anwendung
  */
 
+/* Schriftarten */
+@font-face {
+  font-family: 'ZVV Brown Narrow';
+  src: url('/fonts/ZVVBrownNarrowSWeb-Regular.woff2') format('woff2'),
+       url('/fonts/ZVVBrownNarrowSWeb-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ZVV Brown Narrow';
+  src: url('/fonts/ZVVBrownNarrowSWeb-Bold.woff2') format('woff2'),
+       url('/fonts/ZVVBrownNarrowSWeb-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Variablen */
 :root {
   /* Farben */
-  --zvv-blue: #0a328e;
-  --zvv-blue-light: #3e5fb3;
-  --zvv-blue-dark: #051d54;
-  --zvv-red: #e7000e;
-  --zvv-red-light: #ff3341;
-  --zvv-red-dark: #b30000;
+  --zvv-blue: #0085CC; /* Offizielle ZVV-Blau (S30, Logo) */
+  --zvv-blue-light: #83BCE5; /* Helleres Blau (S35) */
+  --zvv-blue-dark: #0a328e; /* Dunkleres Blau */
+  --zvv-red: #E7000E; /* Offizielle ZVV-Rot (S12, Logo) */
+  --zvv-red-light: #EB4B30; /* Helleres Rot (S18) */
+  --zvv-red-dark: #b30000; /* Dunkleres Rot */
+  --zvv-green: #009E3C; /* Offizielle ZVV-Grün (S9, Logo) */
   --zvv-white: #ffffff;
   --zvv-gray-100: #f5f5f5;
   --zvv-gray-200: #e0e0e0;
   --zvv-gray-300: #cccccc;
   --zvv-gray-400: #999999;
-  --zvv-gray-500: #666666;
+  --zvv-gray-500: #868889; /* Offizielle ZVV-Grau (Logo) */
   --zvv-gray-600: #444444;
   --zvv-gray-700: #333333;
   --zvv-gray-800: #222222;
   --zvv-gray-900: #111111;
   
-  /* Projektfarben */
-  --zvv-color-blue: #3e5fb3;
-  --zvv-color-green: #2e8540;
-  --zvv-color-red: #e7000e;
-  --zvv-color-orange: #ff8c00;
-  --zvv-color-purple: #8a4fff;
-  --zvv-color-turquoise: #00b3b3;
-  --zvv-color-yellow: #ffc107;
-  --zvv-color-pink: #e83e8c;
+  /* Projektfarben - Angepasst an S-Bahn-Linienfarben */
+  --zvv-color-blue: #0085CC; /* S30 */
+  --zvv-color-green: #009E3C; /* S9 */
+  --zvv-color-red: #E7000E; /* S12 */
+  --zvv-color-orange: #F17900; /* S19 */
+  --zvv-color-purple: #764493; /* S6 */
+  --zvv-color-turquoise: #52B3C9; /* S5 */
+  --zvv-color-yellow: #FCBB00; /* S7 */
+  --zvv-color-pink: #EA4C8A; /* S20 */
   
   /* Status-Farben */
-  --zvv-status-active: #2e8540;
-  --zvv-status-planning: #3e5fb3;
-  --zvv-status-completed: #666666;
-  --zvv-status-delayed: #ff8c00;
-  --zvv-status-critical: #e7000e;
+  --zvv-status-active: #009E3C; /* ZVV-Grün */
+  --zvv-status-planning: #0085CC; /* ZVV-Blau */
+  --zvv-status-completed: #868889; /* ZVV-Grau */
+  --zvv-status-delayed: #F17900; /* Orange */
+  --zvv-status-critical: #E7000E; /* ZVV-Rot */
   
   /* Abstände */
-  --zvv-spacing-xs: 0.25rem;
-  --zvv-spacing-sm: 0.5rem;
-  --zvv-spacing-md: 1rem;
-  --zvv-spacing-lg: 1.5rem;
-  --zvv-spacing-xl: 2rem;
-  --zvv-spacing-xxl: 3rem;
+  --zvv-spacing-xs: 0.25rem; /* 4px */
+  --zvv-spacing-sm: 0.5rem;  /* 8px */
+  --zvv-spacing-md: 1rem;    /* 16px */
+  --zvv-spacing-lg: 1.5rem;  /* 24px */
+  --zvv-spacing-xl: 2rem;    /* 32px */
+  --zvv-spacing-xxl: 3rem;   /* 48px */
   
   /* Schriftgrößen */
-  --zvv-font-size-xs: 0.75rem;
-  --zvv-font-size-sm: 0.875rem;
-  --zvv-font-size-md: 1rem;
-  --zvv-font-size-lg: 1.25rem;
-  --zvv-font-size-xl: 1.5rem;
-  --zvv-font-size-xxl: 2rem;
+  --zvv-font-size-xs: 0.75rem;   /* 12px */
+  --zvv-font-size-sm: 0.875rem;  /* 14px */
+  --zvv-font-size-md: 1rem;      /* 16px */
+  --zvv-font-size-lg: 1.25rem;   /* 20px */
+  --zvv-font-size-xl: 1.5rem;    /* 24px */
+  --zvv-font-size-xxl: 2rem;     /* 32px */
+  
+  /* Rahmen */
+  --zvv-border-radius-sm: 4px;
+  --zvv-border-radius-md: 8px;
+  --zvv-border-radius-lg: 12px;
   
   /* Schatten */
-  --zvv-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --zvv-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --zvv-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --zvv-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --zvv-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --zvv-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  
+  /* Container */
+  --zvv-container-width: 1200px;
+  --zvv-container-padding: var(--zvv-spacing-md);
   
   /* Übergänge */
   --zvv-transition-fast: 0.2s ease;
   --zvv-transition-normal: 0.3s ease;
   --zvv-transition-slow: 0.5s ease;
-  
-  /* Abrundungen */
-  --zvv-border-radius-sm: 0.25rem;
-  --zvv-border-radius-md: 0.5rem;
-  --zvv-border-radius-lg: 1rem;
-  
-  /* Container */
-  --zvv-container-width: 1200px;
-  --zvv-container-padding: var(--zvv-spacing-md);
 }
 
 /* Reset und Basis */
@@ -90,7 +110,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'ZVV Brown Narrow', Arial, sans-serif;
   font-size: var(--zvv-font-size-md);
   line-height: 1.5;
   color: var(--zvv-gray-800);
