@@ -1,0 +1,139 @@
+/*
+ * Legal Disclaimer
+ *
+ * Diese Webfonts sind ausschließlich für die Verwendung auf folgenden Domains lizenziert:
+ * Web-Domains, die zu diesem Kunden gehören.
+ *
+ * Es ist strengstens untersagt, diese Schriftarten auf anderen Website-Domains oder Medien herunterzuladen oder zu verwenden.
+ *
+ * Während die @font-face-Anweisungen unten vom Kunden modifiziert werden können, darf dieser
+ * Haftungsausschluss nicht entfernt werden.
+ *
+ * Lineto.com, 2024
+ */
+
+/*
+ * ANWEISUNGEN
+ *
+ * Kopieren Sie den rechtlichen Haftungsausschluss und die @font-face-Anweisungen in Ihre reguläre CSS-Datei.
+ * Die Schriftartenordner sollten relativ zur regulären CSS-Datei platziert werden.
+ */
+
+/* ZVV Brown Narrow S Web - Schmale Variante */
+
+@font-face {
+	font-family: "ZVV Brown Narrow S Web";
+	src: url("ZVVBrownNarrowSWeb-Regular.woff2") format("woff2"),
+		 url("ZVVBrownNarrowSWeb-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow S Web";
+	src: url("ZVVBrownNarrowSWeb-Italic.woff2") format("woff2"),
+		 url("ZVVBrownNarrowSWeb-Italic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow S Web";
+	src: url("ZVVBrownNarrowSWeb-Bold.woff2") format("woff2"),
+		 url("ZVVBrownNarrowSWeb-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow S Web";
+	src: url("ZVVBrownNarrowSWeb-BoldItalic.woff2") format("woff2"),
+		 url("ZVVBrownNarrowSWeb-BoldItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow S Web";
+	src: url("ZVVBrownNarrowSWeb-Black.woff2") format("woff2"),
+		 url("ZVVBrownNarrowSWeb-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow S Web";
+	src: url("ZVVBrownNarrowSWeb-BlackItalic.woff2") format("woff2"),
+		 url("ZVVBrownNarrowSWeb-BlackItalic.woff") format("woff");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* ZVV Brown Narrow Web - Standardvariante */
+
+@font-face {
+	font-family: "ZVV Brown Narrow Web";
+	src: url("ZVVBrownNarrowWeb-Regular.woff2") format("woff2"),
+		 url("ZVVBrownNarrowWeb-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow Web";
+	src: url("ZVVBrownNarrowWeb-Italic.woff2") format("woff2"),
+		 url("ZVVBrownNarrowWeb-Italic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow Web";
+	src: url("ZVVBrownNarrowWeb-Bold.woff2") format("woff2"),
+		 url("ZVVBrownNarrowWeb-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow Web";
+	src: url("ZVVBrownNarrowWeb-BoldItalic.woff2") format("woff2"),
+		 url("ZVVBrownNarrowWeb-BoldItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow Web";
+	src: url("ZVVBrownNarrowWeb-Black.woff2") format("woff2"),
+		 url("ZVVBrownNarrowWeb-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "ZVV Brown Narrow Web";
+	src: url("ZVVBrownNarrowWeb-BlackItalic.woff2") format("woff2"),
+		 url("ZVVBrownNarrowWeb-BlackItalic.woff") format("woff");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Beispiel für die Verwendung */
+/*
+body {
+	font-family: 'ZVV Brown Narrow S Web', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+*/

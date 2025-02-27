@@ -1,0 +1,404 @@
+/**
+ * ZVV Projektmanagement - Komponenten-Stile
+ * 
+ * Enthält die Stile für die verschiedenen Komponenten der ZVV Projektmanagement-Anwendung
+ */
+
+/* Filter-Bereich */
+.zvv-filter-section {
+  margin-bottom: var(--zvv-spacing-xl);
+  background-color: var(--zvv-white);
+  border-radius: var(--zvv-border-radius-md);
+  box-shadow: var(--zvv-shadow-sm);
+  padding: var(--zvv-spacing-lg);
+  position: relative;
+}
+
+.zvv-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--zvv-spacing-lg);
+  align-items: flex-end;
+}
+
+.zvv-filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.zvv-filter-label {
+  display: block;
+  margin-bottom: var(--zvv-spacing-xs);
+  font-weight: 600;
+  color: var(--zvv-gray-700);
+}
+
+.zvv-select {
+  width: 100%;
+  padding: var(--zvv-spacing-sm) var(--zvv-spacing-md);
+  border: 1px solid var(--zvv-gray-300);
+  border-radius: var(--zvv-border-radius-sm);
+  background-color: var(--zvv-white);
+  font-size: var(--zvv-font-size-md);
+  color: var(--zvv-gray-800);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--zvv-spacing-md) center;
+  cursor: pointer;
+}
+
+.zvv-select:focus {
+  outline: none;
+  border-color: var(--zvv-blue);
+  box-shadow: 0 0 0 2px rgba(10, 50, 142, 0.2);
+}
+
+.zvv-search-container {
+  position: relative;
+  width: 100%;
+}
+
+.zvv-search-input {
+  width: 100%;
+  padding: var(--zvv-spacing-sm) var(--zvv-spacing-md);
+  padding-right: calc(var(--zvv-spacing-md) * 2 + 1em);
+  border: 1px solid var(--zvv-gray-300);
+  border-radius: var(--zvv-border-radius-sm);
+  font-size: var(--zvv-font-size-md);
+  color: var(--zvv-gray-800);
+}
+
+.zvv-search-input:focus {
+  outline: none;
+  border-color: var(--zvv-blue);
+  box-shadow: 0 0 0 2px rgba(10, 50, 142, 0.2);
+}
+
+.zvv-search-icon {
+  position: absolute;
+  right: var(--zvv-spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--zvv-gray-500);
+  pointer-events: none;
+}
+
+/* Verbindungsstatus */
+.zvv-connection-status {
+  margin-top: var(--zvv-spacing-md);
+  padding: var(--zvv-spacing-sm) var(--zvv-spacing-md);
+  border-radius: var(--zvv-border-radius-sm);
+  font-size: var(--zvv-font-size-sm);
+  text-align: center;
+  width: 100%;
+}
+
+.zvv-connection-status.connected {
+  background-color: var(--zvv-status-active);
+  color: var(--zvv-white);
+}
+
+.zvv-connection-status.disconnected {
+  background-color: var(--zvv-status-delayed);
+  color: var(--zvv-white);
+}
+
+/* Projekte-Bereich */
+.zvv-projects-section {
+  margin-bottom: var(--zvv-spacing-xl);
+}
+
+.zvv-departments-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--zvv-spacing-xl);
+}
+
+.zvv-department {
+  background-color: var(--zvv-white);
+  border-radius: var(--zvv-border-radius-md);
+  box-shadow: var(--zvv-shadow-sm);
+  padding: var(--zvv-spacing-lg);
+}
+
+.zvv-department-title {
+  font-size: var(--zvv-font-size-lg);
+  color: var(--zvv-blue);
+  margin-bottom: var(--zvv-spacing-lg);
+  padding-bottom: var(--zvv-spacing-sm);
+  border-bottom: 2px solid var(--zvv-gray-200);
+}
+
+.zvv-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--zvv-spacing-lg);
+}
+
+.zvv-project-card {
+  background-color: var(--zvv-white);
+  border-radius: var(--zvv-border-radius-md);
+  box-shadow: var(--zvv-shadow-sm);
+  overflow: hidden;
+  transition: transform var(--zvv-transition-fast), box-shadow var(--zvv-transition-fast);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid var(--zvv-gray-300);
+}
+
+.zvv-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--zvv-shadow-md);
+}
+
+/* Projektfarben */
+.zvv-project-card[data-color="blue"] {
+  border-left-color: var(--zvv-color-blue);
+}
+
+.zvv-project-card[data-color="green"] {
+  border-left-color: var(--zvv-color-green);
+}
+
+.zvv-project-card[data-color="red"] {
+  border-left-color: var(--zvv-color-red);
+}
+
+.zvv-project-card[data-color="orange"] {
+  border-left-color: var(--zvv-color-orange);
+}
+
+.zvv-project-card[data-color="purple"] {
+  border-left-color: var(--zvv-color-purple);
+}
+
+.zvv-project-card[data-color="turquoise"] {
+  border-left-color: var(--zvv-color-turquoise);
+}
+
+.zvv-project-card[data-color="yellow"] {
+  border-left-color: var(--zvv-color-yellow);
+}
+
+.zvv-project-card[data-color="pink"] {
+  border-left-color: var(--zvv-color-pink);
+}
+
+.zvv-project-header {
+  padding: var(--zvv-spacing-md);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--zvv-spacing-md);
+  background-color: var(--zvv-gray-100);
+}
+
+.zvv-project-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--zvv-white);
+  border-radius: var(--zvv-border-radius-sm);
+  box-shadow: var(--zvv-shadow-sm);
+  padding: var(--zvv-spacing-xs);
+}
+
+.zvv-project-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.zvv-project-title {
+  flex: 1;
+  font-size: var(--zvv-font-size-md);
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--zvv-spacing-xs);
+}
+
+.zvv-status-badge {
+  display: inline-block;
+  font-size: var(--zvv-font-size-xs);
+  font-weight: 600;
+  padding: var(--zvv-spacing-xs) var(--zvv-spacing-sm);
+  border-radius: var(--zvv-border-radius-sm);
+  color: var(--zvv-white);
+  background-color: var(--zvv-gray-500);
+  align-self: flex-start;
+}
+
+.zvv-status-badge.active {
+  background-color: var(--zvv-status-active);
+}
+
+.zvv-status-badge.planning {
+  background-color: var(--zvv-status-planning);
+}
+
+.zvv-status-badge.completed {
+  background-color: var(--zvv-status-completed);
+}
+
+.zvv-status-badge.delayed {
+  background-color: var(--zvv-status-delayed);
+}
+
+.zvv-status-badge.critical {
+  background-color: var(--zvv-status-critical);
+}
+
+.zvv-project-content {
+  padding: var(--zvv-spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.zvv-project-context {
+  margin-bottom: var(--zvv-spacing-md);
+  color: var(--zvv-gray-700);
+  flex: 1;
+}
+
+.zvv-project-details-button {
+  align-self: flex-start;
+  background-color: var(--zvv-blue);
+  color: var(--zvv-white);
+  border: none;
+  padding: var(--zvv-spacing-sm) var(--zvv-spacing-md);
+  border-radius: var(--zvv-border-radius-sm);
+  font-size: var(--zvv-font-size-sm);
+  cursor: pointer;
+  transition: background-color var(--zvv-transition-fast);
+  margin-top: auto;
+}
+
+.zvv-project-details-button:hover {
+  background-color: var(--zvv-blue-light);
+}
+
+/* Modal */
+.zvv-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: var(--zvv-spacing-md);
+}
+
+.zvv-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zvv-modal-content {
+  background-color: var(--zvv-white);
+  border-radius: var(--zvv-border-radius-md);
+  box-shadow: var(--zvv-shadow-lg);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.zvv-modal-header {
+  padding: var(--zvv-spacing-lg);
+  border-bottom: 1px solid var(--zvv-gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.zvv-modal-title {
+  margin: 0;
+  font-size: var(--zvv-font-size-xl);
+  color: var(--zvv-blue);
+}
+
+.zvv-modal-close {
+  background: none;
+  border: none;
+  font-size: var(--zvv-font-size-xl);
+  color: var(--zvv-gray-500);
+  cursor: pointer;
+  transition: color var(--zvv-transition-fast);
+}
+
+.zvv-modal-close:hover {
+  color: var(--zvv-red);
+}
+
+.zvv-modal-body {
+  padding: var(--zvv-spacing-lg);
+}
+
+.zvv-project-context-full {
+  font-size: var(--zvv-font-size-lg);
+  color: var(--zvv-gray-700);
+  margin-bottom: var(--zvv-spacing-lg);
+  padding-bottom: var(--zvv-spacing-md);
+  border-bottom: 1px solid var(--zvv-gray-200);
+}
+
+.zvv-project-details-full {
+  color: var(--zvv-gray-800);
+  line-height: 1.6;
+}
+
+/* Responsive Design für Komponenten */
+@media (max-width: 768px) {
+  .zvv-projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .zvv-modal-content {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 576px) {
+  .zvv-projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .zvv-filter-container {
+    flex-direction: column;
+    gap: var(--zvv-spacing-md);
+  }
+  
+  .zvv-filter-group {
+    width: 100%;
+  }
+  
+  .zvv-modal-header {
+    padding: var(--zvv-spacing-md);
+  }
+  
+  .zvv-modal-body {
+    padding: var(--zvv-spacing-md);
+  }
+} 

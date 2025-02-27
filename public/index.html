@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZVV Projektmanagement - Übersicht aller Projekte des Zürcher Verkehrsverbunds">
+    <meta name="theme-color" content="#0a328e">
+    
+    <title>ZVV Projektmanagement</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    
+    <!-- Manifest für PWA -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="zvv-header">
+        <div class="zvv-container">
+            <div class="zvv-header-content">
+                <div class="zvv-logo">
+                    <img src="/icons/zvv-logo.svg" alt="ZVV Logo">
+                </div>
+                <h1 class="zvv-title">Projektmanagement</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main class="zvv-main">
+        <div class="zvv-container">
+            <!-- Filter und Suche -->
+            <section class="zvv-filter-section">
+                <div class="zvv-filter-container">
+                    <div class="zvv-filter-group">
+                        <label for="department-filter" class="zvv-filter-label">Abteilung</label>
+                        <select id="department-filter" class="zvv-select">
+                            <option value="all">Alle Abteilungen</option>
+                            <!-- Wird durch JavaScript gefüllt -->
+                        </select>
+                    </div>
+                    <div class="zvv-filter-group">
+                        <label for="project-search" class="zvv-filter-label">Projektsuche</label>
+                        <div class="zvv-search-container">
+                            <input type="text" id="project-search" class="zvv-search-input" placeholder="Projekt suchen...">
+                            <span class="zvv-search-icon">🔍</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projekte nach Abteilungen -->
+            <section class="zvv-projects-section">
+                <div class="zvv-loading">
+                    <div class="zvv-loading-spinner"></div>
+                    <div class="zvv-loading-text">Projekte werden geladen...</div>
+                </div>
+                <div class="zvv-departments-container">
+                    <!-- Wird durch JavaScript gefüllt -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="zvv-footer">
+        <div class="zvv-container">
+            <div class="zvv-footer-content">
+                <div class="zvv-footer-copyright">
+                    &copy; 2023 Zürcher Verkehrsverbund (ZVV)
+                </div>
+                <div class="zvv-footer-links">
+                    <a href="#" class="zvv-footer-link">Impressum</a>
+                    <a href="#" class="zvv-footer-link">Datenschutz</a>
+                    <a href="#" class="zvv-footer-link">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal für Projektdetails -->
+    <div id="project-details-modal" class="zvv-modal">
+        <div class="zvv-modal-content">
+            <div class="zvv-modal-header">
+                <h2 class="zvv-modal-title">Projektname</h2>
+                <button class="zvv-modal-close">&times;</button>
+            </div>
+            <div class="zvv-modal-body">
+                <div class="zvv-project-context-full"></div>
+                <div class="zvv-project-details-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates -->
+    <template id="department-template">
+        <div class="zvv-department">
+            <h2 class="zvv-department-title">Abteilungsname</h2>
+            <div class="zvv-projects-grid">
+                <!-- Wird durch JavaScript gefüllt -->
+            </div>
+        </div>
+    </template>
+
+    <template id="project-template">
+        <div class="zvv-project-card">
+            <div class="zvv-project-header">
+                <div class="zvv-project-icon"></div>
+                <h3 class="zvv-project-title">Projektname</h3>
+            </div>
+            <div class="zvv-project-content">
+                <p class="zvv-project-context">Projektkontext</p>
+                <button class="zvv-project-details-button">Details anzeigen</button>
+            </div>
+        </div>
+    </template>
+
+    <!-- Scripts -->
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html> 

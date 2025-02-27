@@ -1,0 +1,237 @@
+/* ZVV Projektmanagement - Komponenten-Stile */
+
+/* Projekt-Farbkodierung */
+.zvv-project-card[data-color="red"] .zvv-project-header {
+    border-top: 4px solid var(--zvv-red);
+}
+
+.zvv-project-card[data-color="blue"] .zvv-project-header {
+    border-top: 4px solid var(--zvv-blue);
+}
+
+.zvv-project-card[data-color="green"] .zvv-project-header {
+    border-top: 4px solid var(--zvv-green);
+}
+
+.zvv-project-card[data-color="yellow"] .zvv-project-header {
+    border-top: 4px solid var(--zvv-warning);
+}
+
+.zvv-project-card[data-color="purple"] .zvv-project-header {
+    border-top: 4px solid #764493; /* S6 Lila */
+}
+
+.zvv-project-card[data-color="turquoise"] .zvv-project-header {
+    border-top: 4px solid #52B3C9; /* S5 Türkis */
+}
+
+.zvv-project-card[data-color="orange"] .zvv-project-header {
+    border-top: 4px solid #F17900; /* S19 Orange */
+}
+
+.zvv-project-card[data-color="pink"] .zvv-project-header {
+    border-top: 4px solid #EA4C8A; /* S20 Pink */
+}
+
+/* Abteilungs-Farbkodierung */
+.zvv-department[data-department="management"] .zvv-department-title {
+    border-bottom-color: var(--zvv-red);
+}
+
+.zvv-department[data-department="marketing"] .zvv-department-title {
+    border-bottom-color: var(--zvv-blue);
+}
+
+.zvv-department[data-department="it"] .zvv-department-title {
+    border-bottom-color: var(--zvv-green);
+}
+
+.zvv-department[data-department="finanzen"] .zvv-department-title {
+    border-bottom-color: #FCBB00; /* S7 Gelb */
+}
+
+.zvv-department[data-department="betrieb"] .zvv-department-title {
+    border-bottom-color: #764493; /* S6 Lila */
+}
+
+.zvv-department[data-department="infrastruktur"] .zvv-department-title {
+    border-bottom-color: #52B3C9; /* S5 Türkis */
+}
+
+.zvv-department[data-department="kundendienst"] .zvv-department-title {
+    border-bottom-color: #F17900; /* S19 Orange */
+}
+
+/* Status-Badges */
+.zvv-status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--zvv-radius-sm);
+    font-size: var(--zvv-font-xs);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: var(--zvv-space-sm);
+}
+
+.zvv-status-badge.active {
+    background-color: var(--zvv-success);
+    color: white;
+}
+
+.zvv-status-badge.planning {
+    background-color: var(--zvv-info);
+    color: white;
+}
+
+.zvv-status-badge.completed {
+    background-color: var(--zvv-gray);
+    color: white;
+}
+
+.zvv-status-badge.delayed {
+    background-color: var(--zvv-warning);
+    color: black;
+}
+
+.zvv-status-badge.critical {
+    background-color: var(--zvv-error);
+    color: white;
+}
+
+/* Projekt-Icons */
+.zvv-project-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Projekt-Details */
+.zvv-project-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--zvv-space-md);
+}
+
+.zvv-project-details-table th,
+.zvv-project-details-table td {
+    padding: var(--zvv-space-sm);
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.zvv-project-details-table th {
+    font-weight: bold;
+    width: 30%;
+}
+
+/* Animationen */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.zvv-project-card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.zvv-department {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Ladeanimation */
+.zvv-loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--zvv-blue);
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: var(--zvv-space-md);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Leere Zustände */
+.zvv-empty-state {
+    text-align: center;
+    padding: var(--zvv-space-xl);
+    color: var(--zvv-gray);
+}
+
+.zvv-empty-state-icon {
+    font-size: 3rem;
+    margin-bottom: var(--zvv-space-md);
+}
+
+.zvv-empty-state-message {
+    font-size: var(--zvv-font-md);
+    margin-bottom: var(--zvv-space-md);
+}
+
+.zvv-empty-state-action {
+    display: inline-block;
+    background-color: var(--zvv-blue);
+    color: white;
+    border: none;
+    border-radius: var(--zvv-radius-sm);
+    padding: var(--zvv-space-sm) var(--zvv-space-md);
+    font-size: var(--zvv-font-sm);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.zvv-empty-state-action:hover {
+    background-color: #0073b3;
+    text-decoration: none;
+}
+
+/* Tooltips */
+.zvv-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.zvv-tooltip .zvv-tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--zvv-black);
+    color: white;
+    text-align: center;
+    border-radius: var(--zvv-radius-sm);
+    padding: var(--zvv-space-sm);
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: var(--zvv-font-xs);
+}
+
+.zvv-tooltip .zvv-tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--zvv-black) transparent transparent transparent;
+}
+
+.zvv-tooltip:hover .zvv-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+} 

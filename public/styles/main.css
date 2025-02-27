@@ -1,0 +1,421 @@
+/* ZVV Projektmanagement - Hauptstil */
+
+/* Schriftarten */
+@font-face {
+    font-family: 'ZVV Brown Narrow';
+    src: url('/fonts/ZVVBrownNarrow-Regular.woff2') format('woff2'),
+         url('/fonts/ZVVBrownNarrow-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ZVV Brown Narrow';
+    src: url('/fonts/ZVVBrownNarrow-Bold.woff2') format('woff2'),
+         url('/fonts/ZVVBrownNarrow-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Variablen */
+:root {
+    /* ZVV-Primärfarben */
+    --zvv-red: #E7000E;
+    --zvv-blue: #0085CC;
+    --zvv-green: #009E3C;
+    --zvv-gray: #868889;
+    --zvv-black: #000000;
+    
+    /* UI-Farben */
+    --zvv-background: #F5F5F5;
+    --zvv-card: #FFFFFF;
+    --zvv-error: var(--zvv-red);
+    --zvv-success: var(--zvv-green);
+    --zvv-warning: #FCBB00;
+    --zvv-info: var(--zvv-blue);
+    
+    /* Abstände */
+    --zvv-space-xs: 0.25rem;  /* 4px */
+    --zvv-space-sm: 0.5rem;   /* 8px */
+    --zvv-space-md: 1rem;     /* 16px */
+    --zvv-space-lg: 1.5rem;   /* 24px */
+    --zvv-space-xl: 2rem;     /* 32px */
+    
+    /* Schriftgrößen */
+    --zvv-font-xs: 0.75rem;   /* 12px */
+    --zvv-font-sm: 0.875rem;  /* 14px */
+    --zvv-font-md: 1rem;      /* 16px */
+    --zvv-font-lg: 1.25rem;   /* 20px */
+    --zvv-font-xl: 1.5rem;    /* 24px */
+    --zvv-font-xxl: 2rem;     /* 32px */
+    
+    /* Radien */
+    --zvv-radius-sm: 4px;
+    --zvv-radius-md: 8px;
+    
+    /* Schatten */
+    --zvv-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --zvv-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Grundlegende Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'ZVV Brown Narrow', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--zvv-black);
+    background-color: var(--zvv-background);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--zvv-font-xxl);
+}
+
+h2 {
+    font-size: var(--zvv-font-xl);
+}
+
+h3 {
+    font-size: var(--zvv-font-lg);
+}
+
+h4 {
+    font-size: var(--zvv-font-md);
+}
+
+a {
+    color: var(--zvv-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    font-family: 'ZVV Brown Narrow', Arial, sans-serif;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Layout */
+.zvv-header {
+    background-color: var(--zvv-card);
+    box-shadow: var(--zvv-shadow);
+    padding: var(--zvv-space-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.zvv-header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--zvv-space-md);
+}
+
+.zvv-logo img {
+    height: 40px;
+}
+
+.zvv-title {
+    color: var(--zvv-black);
+}
+
+.zvv-main {
+    flex: 1;
+    padding: var(--zvv-space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.zvv-section {
+    margin-bottom: var(--zvv-space-xl);
+}
+
+.zvv-section-title {
+    margin-bottom: var(--zvv-space-md);
+}
+
+.zvv-footer {
+    background-color: var(--zvv-card);
+    padding: var(--zvv-space-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.zvv-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: var(--zvv-font-sm);
+    color: var(--zvv-gray);
+}
+
+/* Filter-Bereich */
+.zvv-filter-container {
+    background-color: var(--zvv-card);
+    padding: var(--zvv-space-md);
+    border-radius: var(--zvv-radius-md);
+    box-shadow: var(--zvv-shadow);
+}
+
+.zvv-filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--zvv-space-md);
+    align-items: center;
+}
+
+.zvv-search {
+    display: flex;
+    flex: 1;
+    min-width: 250px;
+}
+
+.zvv-search input {
+    flex: 1;
+    padding: var(--zvv-space-sm) var(--zvv-space-md);
+    border: 1px solid var(--zvv-gray);
+    border-radius: var(--zvv-radius-sm) 0 0 var(--zvv-radius-sm);
+    font-family: 'ZVV Brown Narrow', Arial, sans-serif;
+    font-size: var(--zvv-font-md);
+}
+
+.zvv-search-button {
+    background-color: var(--zvv-blue);
+    border: none;
+    border-radius: 0 var(--zvv-radius-sm) var(--zvv-radius-sm) 0;
+    padding: var(--zvv-space-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zvv-search-button img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.zvv-filter-dropdown select {
+    padding: var(--zvv-space-sm) var(--zvv-space-md);
+    border: 1px solid var(--zvv-gray);
+    border-radius: var(--zvv-radius-sm);
+    font-family: 'ZVV Brown Narrow', Arial, sans-serif;
+    font-size: var(--zvv-font-md);
+    min-width: 200px;
+}
+
+/* Abteilungen und Projekte */
+.zvv-departments-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--zvv-space-xl);
+}
+
+.zvv-department {
+    background-color: var(--zvv-card);
+    padding: var(--zvv-space-md);
+    border-radius: var(--zvv-radius-md);
+    box-shadow: var(--zvv-shadow);
+}
+
+.zvv-department-title {
+    margin-bottom: var(--zvv-space-md);
+    padding-bottom: var(--zvv-space-sm);
+    border-bottom: 2px solid var(--zvv-blue);
+}
+
+.zvv-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--zvv-space-md);
+}
+
+.zvv-project-card {
+    background-color: var(--zvv-card);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--zvv-radius-md);
+    box-shadow: var(--zvv-shadow);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.zvv-project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--zvv-shadow-lg);
+}
+
+.zvv-project-header {
+    padding: var(--zvv-space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.zvv-project-title {
+    margin: 0;
+    font-weight: bold;
+}
+
+.zvv-project-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zvv-project-body {
+    padding: var(--zvv-space-md);
+    min-height: 100px;
+}
+
+.zvv-project-context {
+    font-size: var(--zvv-font-md);
+    color: var(--zvv-black);
+}
+
+.zvv-project-footer {
+    padding: var(--zvv-space-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.zvv-project-details-button {
+    background-color: var(--zvv-blue);
+    color: white;
+    border: none;
+    border-radius: var(--zvv-radius-sm);
+    padding: var(--zvv-space-sm) var(--zvv-space-md);
+    font-size: var(--zvv-font-sm);
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.zvv-project-details-button:hover {
+    background-color: #0073b3;
+}
+
+/* Modal */
+.zvv-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.zvv-modal.active {
+    display: flex;
+}
+
+.zvv-modal-content {
+    background-color: var(--zvv-card);
+    border-radius: var(--zvv-radius-md);
+    box-shadow: var(--zvv-shadow-lg);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.zvv-modal-header {
+    padding: var(--zvv-space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.zvv-modal-title {
+    margin: 0;
+}
+
+.zvv-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.zvv-modal-body {
+    padding: var(--zvv-space-md);
+}
+
+.zvv-project-context-full {
+    margin-bottom: var(--zvv-space-md);
+    padding-bottom: var(--zvv-space-md);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.zvv-project-details-full {
+    white-space: pre-line;
+}
+
+/* Ladezustand */
+.zvv-loading {
+    text-align: center;
+    padding: var(--zvv-space-xl);
+    color: var(--zvv-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .zvv-header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--zvv-space-sm);
+    }
+    
+    .zvv-filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .zvv-projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .zvv-modal-content {
+        width: 95%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .zvv-projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
